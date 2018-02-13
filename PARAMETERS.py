@@ -6,6 +6,8 @@ import glob
 import numpy
 from matplotlib import pyplot
 
+# pridict only Fs
+singleFs = True
 # drop the 1:predict-1 output
 DROP = True
 # data path

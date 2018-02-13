@@ -7,6 +7,7 @@ import PARAMETERS
 from pandas import read_csv
 import pickle
 
+singleFs = PARAMETERS.singleFs
 DROP = PARAMETERS.DROP
 smootheddata = PARAMETERS.smoothedtrain
 Net_PATH = PARAMETERS.Netsaved_PATH
@@ -25,16 +26,21 @@ predict = PARAMETERS.PREDICT
 #values0 = PARAMETERS.loaddata(TRAINDATA_PATH)
 values0 = read_csv(smootheddata,index_col=None, header=0) # smoothed data = [Ft, Fs, D]
 values0 = values0.values
-
+values0 = values0[0:1000,:]
 # normalize features
-scaler = MinMaxScaler(feature_range=(0, 1))
-scaled = scaler.fit_transform(values0)
+#scaler = MinMaxScaler(feature_range=(0, 1))
+#scaled = scaler.fit_transform(values0)
+scaled = values0
 # frame as supervised learning
 reframed = PARAMETERS.series_to_supervised(scaled, delay, predict)
 # drop columns we don't want to predict
 if DROP == True:
     reframed.drop(reframed.columns[-predict*NUM_FEATURE:-NUM_FEATURE], axis=1, inplace=True)
     predict = 1
+if singleFs == True:
+#drop the Ft, D in the output
+    reframed.drop(reframed.columns[-3], axis=1, inplace=True)
+    reframed.drop(reframed.columns[-1], axis=1, inplace=True)
 # split into train and test sets
 values = reframed.values
 train = values[:int(0.6*values.shape[0]), :]
@@ -46,12 +52,19 @@ test_X0, test_y = test[:, :delay*NUM_FEATURE], test[:, delay*NUM_FEATURE:]
 train_X = train_X0.reshape((train_X0.shape[0], delay, NUM_FEATURE))
 test_X = test_X0.reshape((test_X0.shape[0], delay, NUM_FEATURE))
 #print(train_X.shape, train_y.shape, test_X.shape, test_y.shape)
-
+A
 # design network
 model = Sequential()
 model.add(LSTM(NUM_NEURAL, input_shape=(train_X.shape[1], train_X.shape[2])))
-model.add(Dense(NUM_DENSE))
-model.add(Dense(predict*NUM_FEATURE))
+#model.add(LSTM(NUM_NEURAL, return_sequences=True, input_shape=(train_X.shape[1], train_X.shape[2])))
+#model.add(LSTM(NUM_NEURAL, return_sequences=True)
+#model.add(LSTM(NUM_NEURAL)
+if NUM_DENSE != 0:
+    model.add(Dense(NUM_DENSE))
+if singleFs == True:
+    model.add(Dense(1))
+else:
+    model.add(Dense(predict*NUM_FEATURE))
 model.compile(loss='mae', optimizer='adam')
 # fit network
 history = model.fit(train_X, train_y, epochs=NUM_EPOCH, batch_size=BATCH_SIZE, validation_data=(test_X, test_y), verbose=2,
