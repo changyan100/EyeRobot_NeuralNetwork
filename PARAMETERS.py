@@ -4,30 +4,35 @@ from pandas import DataFrame
 from pandas import concat
 import glob
 import numpy
-from matplotlib import pyplot
+#from matplotlib import pyplot
 
+
+# multi-lstm
+MULTI_LSTM = False
 # pridict only Fs
-singleFs = True
+singleFs = False
 # drop the 1:predict-1 output
 DROP = True
 # data path
+Vesselfollowdata = './data/Traindata_vesselfollow.csv'
 smoothedtrain = './data/smootheddata/smoothed001.csv'
 TRAINDATA_PATH = './data/traindata'
 
 # network saved path
-Netsaved_PATH = './TrainedNetwork/LSTMnet_smoothed120n-150d.h5'
-HISTORYsaved_PATH = './history-120n-150d.pickle'
+Netsaved_PATH = './TrainedNetwork/PeriodicTrainedNN/LSTMnet-periodic_1out100_60n-0n-150d-PreriodicTest.h5'
+HISTORYsaved_PATH = './TrainedNetwork/PeriodicTrainedNN/history-periodic_1out100_60n-0n-150d-PreriodicTest.pickle'
 
 # define training process
-BATCH_SIZE = 500 #3200  #3200*5=17000ms = 17s
-NUM_EPOCH = 2
+BATCH_SIZE = 20 #3200  #3200*5=17000ms = 17s
+NUM_EPOCH = 20
 # define network
-NUM_FEATURE = 3
-NUM_NEURAL = 100
-NUM_DENSE = 100
+NUM_FEATURE = 2
+NUM_LSTM = 60
+NUM_LSTM2 = 0
+NUM_DENSE = 0
 # define the delay and predict number ahead
-DELAY = 100
-PREDICT = 30
+DELAY = 50
+PREDICT = 20
 
 # convert series to supervised learning
 def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
