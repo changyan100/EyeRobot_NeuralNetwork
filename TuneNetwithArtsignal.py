@@ -12,25 +12,19 @@ from sklearn.metrics import mean_squared_error
 from numpy import std
 from numpy import amax
 from numpy import abs
+from keras.utils import plot_model
 
-
-DROP = True
+DROP = True #drop the middle predicted values, and only predict the n time value
 NUM_FEATURE = 2
 
+# define the predict number ahead
+PRIDICT_initial = 10
 
-BATCH_SIZE = 30
-NUM_EPOCH = [300, 400, 500, 600]
-#LR = [0.001, 0.005, 0.01, 0.02, 0.05] #learning rate
-NUM_LSTM = [50, 60, 70, 80]
-# NUM_DENSE =
-# define the delay and predict number ahead
-HISTORY = [50, 60, 70, 80]
-PRIDICT = 20
-
-
-Net_PATH = './EyeRobot_NeuralNetwork/TunedNet-mocksignal/Net_Epoch{epoch}-LSTMnurs{neu}-History-{his}.h5'
-TrainLossFigname = 'TrainLoss-Epoch{epoch}-LSTMnurs{neu}-History-{his}.svg'
-EvaFigname = 'Evaluation-Epoch{epoch}-LSTMnurs{neu}-History-{his}.svg'
+#Net_PATH = './EyeRobot_NeuralNetwork/TunedNet-mocksignal/Net_Epoch{epoch}-LSTMnurs{neu}-History-{his}.h5'
+Net_PATH = './TunedNet-mocksignal/Net_Epoch{epoch}-LSTMnurs{neu}-History{his}.h5'
+ModelFigname = './TunedNet-mocksignal/Net_Epoch{epoch}-LSTMnurs{neu}-History{his}.png'
+TrainLossFigname = './TunedNet-mocksignal/TrainLoss-Epoch{epoch}-LSTMnurs{neu}-History-{his}.svg'
+EvaFigname = './TunedNet-mocksignal/Evaluation-Epoch{epoch}-LSTMnurs{neu}-History-{his}.svg'
 
 # data for train
 preriodic = ArtificialSignal.PeriodicSingnal(500)
@@ -38,18 +32,22 @@ scaled = preriodic
 # data for evaluation
 values0 = ArtificialSignal.PeriodicSingnal(10)
 # Hyperameters
-NUM_EPOCH = [300, 400, 500, 600]
+BATCH_SIZE = 20
 #LR = [0.001, 0.005, 0.01, 0.02, 0.05] #learning rate
-NUM_LSTM = [50, 60, 70, 80]
-HISTORY = [50, 60, 70, 80]
+NUM_EPOCH = [20, 40, 60, 80]
+NUM_LSTM = [20, 40, 60, 80]
+HISTORY = [40, 60, 80,100]
 
-
-for e in len(NUM_EPOCH):
-    for h in len(HISTORY):
-        for n in len(NUM_LSTM):
+count = 0
+f= open("ValidationError.txt","a+")
+for n in range(0, len(NUM_LSTM), 1):
+    for h in range(0, len(HISTORY), 1):
+        for e in range(0, len(NUM_EPOCH), 1):
+            count += 1
+            PRIDICT = PRIDICT_initial
             # frame as supervised learning
             reframed = PARAMETERS.series_to_supervised(scaled, HISTORY[h], PRIDICT)
-            # drop columns we don't want to predict
+            # drop columns we do not want to predict
             if DROP == True:
                 reframed.drop(reframed.columns[-PRIDICT * NUM_FEATURE:-NUM_FEATURE], axis=1, inplace=True)
                 PRIDICT = 1
@@ -72,20 +70,25 @@ for e in len(NUM_EPOCH):
             history = model.fit(train_X, train_y, epochs=NUM_EPOCH[e], batch_size=BATCH_SIZE, validation_data=(test_X, test_y), verbose=2,
                                 shuffle=False)
             # save network
+            #plot_model(model, to_file=ModelFigname.format(epoch=NUM_EPOCH[e], neu=NUM_LSTM[n], his=HISTORY[h]))
             model.save(Net_PATH.format(epoch=NUM_EPOCH[e], neu=NUM_LSTM[n], his=HISTORY[h]))
             # plot train loss
             fig = pyplot.figure()
             pyplot.plot(history.history['loss'], label='train')
             pyplot.plot(history.history['val_loss'], label='test')
             pyplot.legend()
+            #pyplot.show()
             figname = TrainLossFigname.format(epoch=NUM_EPOCH[e], neu=NUM_LSTM[n], his=HISTORY[h])
             pyplot.title(figname)
             pyplot.savefig(figname)
+            pyplot.close()
             #evaluation
+            PRIDICT = PRIDICT_initial
             reframed = PARAMETERS.series_to_supervised(values0, HISTORY[h], PRIDICT)
             # drop columns we don't want to predict
             if DROP == True:
-                reframed.drop(reframed.columns[PRIDICT * NUM_FEATURE:-NUM_FEATURE], axis=1, inplace=True)
+                reframed.drop(reframed.columns[-PRIDICT * NUM_FEATURE:-NUM_FEATURE], axis=1, inplace=True)
+                PRIDICT = 1
             values = reframed.values
             # split into input and outputs
             groundtruth_X, groundtruth_y = values[:, :HISTORY[h] * NUM_FEATURE], values[:, HISTORY[h] * NUM_FEATURE:]
@@ -97,12 +100,15 @@ for e in len(NUM_EPOCH):
             error = groundtruth_y -yhat
             error_std = std(error, axis= 0)
             maxerror = amax(abs(error), axis=0)
-            print('epoch',NUM_EPOCH[e])
-            print('lstmNural',NUM_LSTM[n])
-            print('history',HISTORY[h])
-            print('rmse', rmse)
-            print('error_std', error_std)
-            print('maxerror', maxerror)
+            f.write("*******************************\n")
+            f.write("Count = %d\r\n" % count)
+            f.write("lstmNural = %d\r\n" % NUM_LSTM[n])
+            f.write("history = %d\r\n" % HISTORY[h])
+            f.write("epoch = %d\r\n" % NUM_EPOCH[e])
+            f.write("rmse: Fs = %.2f Depth = %.2f\r\n" % (rmse[0], rmse[1]))
+            f.write("error_std: Fs = %.2f Depth = %.2f\r\n" % (error_std[0],error_std[1]))
+            f.write("maxerror: Fs = %.2f Depth = %.2f\r\n" % (maxerror[0],maxerror[1]))
+            f.write("*******************************\n")
             #plot
             xx = [x for x in range(len(groundtruth_y[:,0]))]
             fig = pyplot.figure()
@@ -120,3 +126,5 @@ for e in len(NUM_EPOCH):
             figname = EvaFigname.format(epoch=NUM_EPOCH[e], neu=NUM_LSTM[n], his=HISTORY[h])
             pyplot.title(figname)
             pyplot.savefig(figname)
+            pyplot.close()
+f.close()
