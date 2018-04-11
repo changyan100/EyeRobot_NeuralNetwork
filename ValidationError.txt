@@ -1,0 +1,579 @@
+
+*******************************
+
+*******************************
+Count = 1
+lstmNural = 20
+history = 40
+epoch = 20
+rmse: Fs = 3.51 Depth = 0.76
+error_std: Fs = 2.85 Depth = 0.70
+maxerror: Fs = 11.65 Depth = 3.07
+*******************************
+*******************************
+Count = 2
+lstmNural = 20
+history = 40
+epoch = 40
+rmse: Fs = 4.00 Depth = 0.97
+error_std: Fs = 3.17 Depth = 0.83
+maxerror: Fs = 15.30 Depth = 3.22
+*******************************
+*******************************
+Count = 3
+lstmNural = 20
+history = 40
+epoch = 60
+rmse: Fs = 4.45 Depth = 0.92
+error_std: Fs = 3.24 Depth = 0.66
+maxerror: Fs = 15.13 Depth = 3.04
+*******************************
+*******************************
+Count = 4
+lstmNural = 20
+history = 40
+epoch = 80
+rmse: Fs = 3.27 Depth = 0.70
+error_std: Fs = 2.11 Depth = 0.51
+maxerror: Fs = 11.19 Depth = 2.35
+*******************************
+*******************************
+Count = 5
+lstmNural = 20
+history = 60
+epoch = 20
+rmse: Fs = 4.28 Depth = 1.00
+error_std: Fs = 2.96 Depth = 0.82
+maxerror: Fs = 12.26 Depth = 3.53
+*******************************
+*******************************
+Count = 6
+lstmNural = 20
+history = 60
+epoch = 40
+rmse: Fs = 4.72 Depth = 1.01
+error_std: Fs = 3.08 Depth = 0.74
+maxerror: Fs = 13.53 Depth = 3.05
+*******************************
+*******************************
+Count = 7
+lstmNural = 20
+history = 60
+epoch = 60
+rmse: Fs = 4.97 Depth = 0.90
+error_std: Fs = 2.88 Depth = 0.49
+maxerror: Fs = 14.68 Depth = 2.37
+*******************************
+*******************************
+Count = 8
+lstmNural = 20
+history = 60
+epoch = 80
+rmse: Fs = 3.75 Depth = 0.96
+error_std: Fs = 2.41 Depth = 0.64
+maxerror: Fs = 11.24 Depth = 3.26
+*******************************
+*******************************
+Count = 9
+lstmNural = 20
+history = 80
+epoch = 20
+rmse: Fs = 5.14 Depth = 1.27
+error_std: Fs = 3.77 Depth = 0.92
+maxerror: Fs = 15.11 Depth = 5.16
+*******************************
+*******************************
+Count = 10
+lstmNural = 20
+history = 80
+epoch = 40
+rmse: Fs = 4.87 Depth = 0.96
+error_std: Fs = 3.38 Depth = 0.78
+maxerror: Fs = 13.52 Depth = 2.63
+*******************************
+*******************************
+Count = 11
+lstmNural = 20
+history = 80
+epoch = 60
+rmse: Fs = 3.62 Depth = 0.93
+error_std: Fs = 2.32 Depth = 0.63
+maxerror: Fs = 12.45 Depth = 2.96
+*******************************
+*******************************
+Count = 12
+lstmNural = 20
+history = 80
+epoch = 80
+rmse: Fs = 5.02 Depth = 1.08
+error_std: Fs = 3.29 Depth = 0.78
+maxerror: Fs = 13.90 Depth = 4.05
+*******************************
+*******************************
+Count = 13
+lstmNural = 20
+history = 100
+epoch = 20
+rmse: Fs = 4.57 Depth = 0.86
+error_std: Fs = 3.20 Depth = 0.62
+maxerror: Fs = 12.33 Depth = 3.14
+*******************************
+*******************************
+Count = 14
+lstmNural = 20
+history = 100
+epoch = 40
+rmse: Fs = 5.53 Depth = 1.26
+error_std: Fs = 3.74 Depth = 0.89
+maxerror: Fs = 14.97 Depth = 3.59
+*******************************
+*******************************
+Count = 15
+lstmNural = 20
+history = 100
+epoch = 60
+rmse: Fs = 4.45 Depth = 0.98
+error_std: Fs = 2.32 Depth = 0.51
+maxerror: Fs = 11.60 Depth = 2.55
+*******************************
+*******************************
+Count = 16
+lstmNural = 20
+history = 100
+epoch = 80
+rmse: Fs = 4.46 Depth = 0.90
+error_std: Fs = 2.81 Depth = 0.60
+maxerror: Fs = 11.77 Depth = 3.26
+*******************************
+*******************************
+Count = 17
+lstmNural = 40
+history = 40
+epoch = 20
+rmse: Fs = 5.00 Depth = 1.15
+error_std: Fs = 3.96 Depth = 1.02
+maxerror: Fs = 14.76 Depth = 4.37
+*******************************
+*******************************
+Count = 18
+lstmNural = 40
+history = 40
+epoch = 40
+rmse: Fs = 4.79 Depth = 0.97
+error_std: Fs = 3.69 Depth = 0.82
+maxerror: Fs = 13.85 Depth = 3.64
+*******************************
+*******************************
+Count = 19
+lstmNural = 40
+history = 40
+epoch = 60
+rmse: Fs = 4.26 Depth = 0.91
+error_std: Fs = 2.60 Depth = 0.50
+maxerror: Fs = 12.16 Depth = 2.81
+*******************************
+*******************************
+Count = 20
+lstmNural = 40
+history = 40
+epoch = 80
+rmse: Fs = 3.76 Depth = 1.02
+error_std: Fs = 2.62 Depth = 0.79
+maxerror: Fs = 13.38 Depth = 3.22
+*******************************
+*******************************
+Count = 21
+lstmNural = 40
+history = 60
+epoch = 20
+rmse: Fs = 4.63 Depth = 0.84
+error_std: Fs = 3.26 Depth = 0.69
+maxerror: Fs = 14.50 Depth = 3.41
+*******************************
+*******************************
+Count = 22
+lstmNural = 40
+history = 60
+epoch = 40
+rmse: Fs = 5.00 Depth = 1.11
+error_std: Fs = 3.21 Depth = 0.74
+maxerror: Fs = 14.61 Depth = 4.23
+*******************************
+*******************************
+Count = 23
+lstmNural = 40
+history = 60
+epoch = 60
+rmse: Fs = 5.12 Depth = 1.14
+error_std: Fs = 2.98 Depth = 0.79
+maxerror: Fs = 13.94 Depth = 3.88
+*******************************
+*******************************
+Count = 24
+lstmNural = 40
+history = 60
+epoch = 80
+rmse: Fs = 4.62 Depth = 0.78
+error_std: Fs = 3.05 Depth = 0.58
+maxerror: Fs = 14.06 Depth = 2.47
+*******************************
+*******************************
+Count = 25
+lstmNural = 40
+history = 80
+epoch = 20
+rmse: Fs = 4.79 Depth = 0.65
+error_std: Fs = 3.49 Depth = 0.46
+maxerror: Fs = 12.72 Depth = 2.29
+*******************************
+*******************************
+Count = 26
+lstmNural = 40
+history = 80
+epoch = 40
+rmse: Fs = 4.50 Depth = 0.81
+error_std: Fs = 2.89 Depth = 0.58
+maxerror: Fs = 12.62 Depth = 2.90
+*******************************
+*******************************
+Count = 27
+lstmNural = 40
+history = 80
+epoch = 60
+rmse: Fs = 4.44 Depth = 0.89
+error_std: Fs = 2.93 Depth = 0.53
+maxerror: Fs = 11.37 Depth = 2.63
+*******************************
+*******************************
+Count = 28
+lstmNural = 40
+history = 80
+epoch = 80
+rmse: Fs = 4.21 Depth = 0.69
+error_std: Fs = 2.67 Depth = 0.46
+maxerror: Fs = 12.99 Depth = 2.87
+*******************************
+*******************************
+Count = 29
+lstmNural = 40
+history = 100
+epoch = 20
+rmse: Fs = 4.96 Depth = 0.77
+error_std: Fs = 3.52 Depth = 0.56
+maxerror: Fs = 13.96 Depth = 2.94
+*******************************
+*******************************
+Count = 30
+lstmNural = 40
+history = 100
+epoch = 40
+rmse: Fs = 5.41 Depth = 1.04
+error_std: Fs = 3.64 Depth = 0.66
+maxerror: Fs = 14.46 Depth = 2.97
+*******************************
+*******************************
+Count = 31
+lstmNural = 40
+history = 100
+epoch = 60
+rmse: Fs = 5.59 Depth = 1.49
+error_std: Fs = 3.80 Depth = 1.01
+maxerror: Fs = 15.82 Depth = 4.33
+*******************************
+*******************************
+Count = 32
+lstmNural = 40
+history = 100
+epoch = 80
+rmse: Fs = 5.35 Depth = 1.08
+error_std: Fs = 3.54 Depth = 0.72
+maxerror: Fs = 14.10 Depth = 3.63
+*******************************
+*******************************
+Count = 33
+lstmNural = 60
+history = 40
+epoch = 20
+rmse: Fs = 4.63 Depth = 0.84
+error_std: Fs = 3.65 Depth = 0.63
+maxerror: Fs = 16.05 Depth = 3.21
+*******************************
+*******************************
+Count = 34
+lstmNural = 60
+history = 40
+epoch = 40
+rmse: Fs = 5.17 Depth = 1.21
+error_std: Fs = 3.66 Depth = 0.90
+maxerror: Fs = 16.23 Depth = 4.54
+*******************************
+*******************************
+Count = 35
+lstmNural = 60
+history = 40
+epoch = 60
+rmse: Fs = 4.33 Depth = 1.00
+error_std: Fs = 2.84 Depth = 0.66
+maxerror: Fs = 14.00 Depth = 3.74
+*******************************
+*******************************
+Count = 36
+lstmNural = 60
+history = 40
+epoch = 80
+rmse: Fs = 4.00 Depth = 0.81
+error_std: Fs = 2.84 Depth = 0.61
+maxerror: Fs = 11.86 Depth = 3.20
+*******************************
+*******************************
+Count = 37
+lstmNural = 60
+history = 60
+epoch = 20
+rmse: Fs = 5.95 Depth = 1.13
+error_std: Fs = 4.33 Depth = 0.88
+maxerror: Fs = 17.70 Depth = 3.94
+*******************************
+*******************************
+Count = 38
+lstmNural = 60
+history = 60
+epoch = 40
+rmse: Fs = 5.19 Depth = 0.80
+error_std: Fs = 4.16 Depth = 0.74
+maxerror: Fs = 17.55 Depth = 3.53
+*******************************
+*******************************
+Count = 39
+lstmNural = 60
+history = 60
+epoch = 60
+rmse: Fs = 5.27 Depth = 0.85
+error_std: Fs = 3.90 Depth = 0.69
+maxerror: Fs = 16.43 Depth = 3.35
+*******************************
+*******************************
+Count = 40
+lstmNural = 60
+history = 60
+epoch = 80
+rmse: Fs = 4.96 Depth = 0.89
+error_std: Fs = 3.57 Depth = 0.61
+maxerror: Fs = 16.16 Depth = 3.32
+*******************************
+*******************************
+Count = 41
+lstmNural = 60
+history = 80
+epoch = 20
+rmse: Fs = 5.38 Depth = 0.88
+error_std: Fs = 4.00 Depth = 0.61
+maxerror: Fs = 19.01 Depth = 3.35
+*******************************
+*******************************
+Count = 42
+lstmNural = 60
+history = 80
+epoch = 40
+rmse: Fs = 5.56 Depth = 0.89
+error_std: Fs = 4.25 Depth = 0.62
+maxerror: Fs = 15.98 Depth = 2.68
+*******************************
+*******************************
+Count = 43
+lstmNural = 60
+history = 80
+epoch = 60
+rmse: Fs = 4.76 Depth = 0.81
+error_std: Fs = 2.91 Depth = 0.55
+maxerror: Fs = 14.08 Depth = 2.75
+*******************************
+*******************************
+Count = 44
+lstmNural = 60
+history = 80
+epoch = 80
+rmse: Fs = 5.36 Depth = 0.75
+error_std: Fs = 3.82 Depth = 0.56
+maxerror: Fs = 16.68 Depth = 3.02
+*******************************
+*******************************
+Count = 45
+lstmNural = 60
+history = 100
+epoch = 20
+rmse: Fs = 6.32 Depth = 1.16
+error_std: Fs = 5.14 Depth = 0.91
+maxerror: Fs = 20.18 Depth = 3.96
+*******************************
+*******************************
+Count = 46
+lstmNural = 60
+history = 100
+epoch = 40
+rmse: Fs = 5.29 Depth = 0.93
+error_std: Fs = 3.44 Depth = 0.73
+maxerror: Fs = 17.89 Depth = 3.20
+*******************************
+*******************************
+Count = 47
+lstmNural = 60
+history = 100
+epoch = 60
+rmse: Fs = 4.35 Depth = 0.75
+error_std: Fs = 3.18 Depth = 0.50
+maxerror: Fs = 12.18 Depth = 2.64
+*******************************
+*******************************
+Count = 48
+lstmNural = 60
+history = 100
+epoch = 80
+rmse: Fs = 4.73 Depth = 1.04
+error_std: Fs = 3.42 Depth = 0.66
+maxerror: Fs = 14.19 Depth = 3.23
+*******************************
+*******************************
+Count = 49
+lstmNural = 80
+history = 40
+epoch = 20
+rmse: Fs = 4.75 Depth = 0.92
+error_std: Fs = 3.84 Depth = 0.60
+maxerror: Fs = 14.13 Depth = 3.27
+*******************************
+*******************************
+Count = 50
+lstmNural = 80
+history = 40
+epoch = 40
+rmse: Fs = 4.16 Depth = 0.95
+error_std: Fs = 2.84 Depth = 0.71
+maxerror: Fs = 11.46 Depth = 3.65
+*******************************
+*******************************
+Count = 51
+lstmNural = 80
+history = 40
+epoch = 60
+rmse: Fs = 3.69 Depth = 0.76
+error_std: Fs = 2.51 Depth = 0.55
+maxerror: Fs = 11.87 Depth = 3.00
+*******************************
+*******************************
+Count = 52
+lstmNural = 80
+history = 40
+epoch = 80
+rmse: Fs = 3.50 Depth = 0.87
+error_std: Fs = 2.26 Depth = 0.61
+maxerror: Fs = 10.13 Depth = 3.29
+*******************************
+*******************************
+Count = 53
+lstmNural = 80
+history = 60
+epoch = 20
+rmse: Fs = 5.89 Depth = 0.97
+error_std: Fs = 4.86 Depth = 0.83
+maxerror: Fs = 21.14 Depth = 3.73
+*******************************
+*******************************
+Count = 54
+lstmNural = 80
+history = 60
+epoch = 40
+rmse: Fs = 5.03 Depth = 0.90
+error_std: Fs = 3.38 Depth = 0.72
+maxerror: Fs = 15.86 Depth = 3.55
+*******************************
+*******************************
+Count = 55
+lstmNural = 80
+history = 60
+epoch = 60
+rmse: Fs = 4.54 Depth = 0.91
+error_std: Fs = 3.17 Depth = 0.74
+maxerror: Fs = 13.86 Depth = 3.55
+*******************************
+*******************************
+Count = 56
+lstmNural = 80
+history = 60
+epoch = 80
+rmse: Fs = 4.35 Depth = 0.80
+error_std: Fs = 3.11 Depth = 0.63
+maxerror: Fs = 13.81 Depth = 2.88
+*******************************
+*******************************
+Count = 57
+lstmNural = 80
+history = 80
+epoch = 20
+rmse: Fs = 5.09 Depth = 0.89
+error_std: Fs = 3.99 Depth = 0.77
+maxerror: Fs = 17.16 Depth = 3.87
+*******************************
+*******************************
+Count = 58
+lstmNural = 80
+history = 80
+epoch = 40
+rmse: Fs = 5.28 Depth = 0.91
+error_std: Fs = 3.49 Depth = 0.64
+maxerror: Fs = 14.85 Depth = 3.10
+*******************************
+*******************************
+Count = 59
+lstmNural = 80
+history = 80
+epoch = 60
+rmse: Fs = 4.56 Depth = 0.82
+error_std: Fs = 2.91 Depth = 0.53
+maxerror: Fs = 14.37 Depth = 3.01
+*******************************
+*******************************
+Count = 60
+lstmNural = 80
+history = 80
+epoch = 80
+rmse: Fs = 4.52 Depth = 0.83
+error_std: Fs = 2.99 Depth = 0.57
+maxerror: Fs = 15.21 Depth = 3.26
+*******************************
+*******************************
+Count = 61
+lstmNural = 80
+history = 100
+epoch = 20
+rmse: Fs = 5.66 Depth = 1.00
+error_std: Fs = 4.32 Depth = 0.81
+maxerror: Fs = 15.76 Depth = 3.41
+*******************************
+*******************************
+Count = 62
+lstmNural = 80
+history = 100
+epoch = 40
+rmse: Fs = 5.43 Depth = 0.88
+error_std: Fs = 4.01 Depth = 0.69
+maxerror: Fs = 15.77 Depth = 3.44
+*******************************
+*******************************
+Count = 63
+lstmNural = 80
+history = 100
+epoch = 60
+rmse: Fs = 4.88 Depth = 0.94
+error_std: Fs = 3.49 Depth = 0.69
+maxerror: Fs = 16.78 Depth = 3.55
+*******************************
+*******************************
+Count = 64
+lstmNural = 80
+history = 100
+epoch = 80
+rmse: Fs = 4.57 Depth = 1.01
+error_std: Fs = 2.96 Depth = 0.65
+maxerror: Fs = 13.28 Depth = 3.72
+*******************************
